@@ -1,10 +1,29 @@
-#include <iostream>
 
-using namespace std;
+
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/VideoMode.hpp>
 
 int main( )
 {
-	cout << "Hello world!";
+    sf::RenderWindow window(
+        sf::VideoMode(640, 480),
+        "Hello World");
+    sf::CircleShape shape(200);
 
-	return 0;
+    while( window.isOpen( ) )
+    {
+        sf::Event event;
+        while(
+            window.pollEvent(event) )
+            if( event.type ==
+               sf::Event::Closed )
+                window.close( );
+
+        window.clear( );
+        window.draw(shape);
+        window.display( );
+    }
+    return 0;
 }
