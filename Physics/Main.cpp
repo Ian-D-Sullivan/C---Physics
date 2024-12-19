@@ -29,7 +29,6 @@ int main( )
 
         window.clear( );
         A.draw(window);
-        A.translate({ {0, 0.01 } });
         window.display( );
     }
     return 0;
