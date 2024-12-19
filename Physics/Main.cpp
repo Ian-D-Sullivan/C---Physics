@@ -1,16 +1,22 @@
 
-
-#include <SFML/Graphics/CircleShape.hpp>
+#include "Circle.h"
+#include <array>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 
+using namespace std;
+
+typedef array<float, 2> fPoint;
+
 int main( )
 {
+
+    Circle A({ {250,250} }, 50, 0 );
+
     sf::RenderWindow window(
-        sf::VideoMode(640, 480),
-        "Hello World");
-    sf::CircleShape shape(200);
+        sf::VideoMode(500, 500),
+        "Test");
 
     while( window.isOpen( ) )
     {
@@ -22,7 +28,8 @@ int main( )
                 window.close( );
 
         window.clear( );
-        window.draw(shape);
+        A.draw(window);
+        A.translate({ {0, 0.01 } });
         window.display( );
     }
     return 0;
