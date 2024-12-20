@@ -33,6 +33,7 @@ int main( )
         window.clear( );
         A.render(window);
         B.render(window);
+        B.translate({ {0.1, 0.05} });
         window.display( );
     }
     return 0;

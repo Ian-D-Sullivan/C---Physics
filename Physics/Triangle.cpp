@@ -18,7 +18,7 @@ Triangle::Triangle(array<fPoint, 3> vertexes, float mass)
 	this->mass = mass;
 
 	updateCenter( );
-	updateVertexVectors( );
+	updateLocalVertexVectors( );
 }
 
 //render
@@ -33,6 +33,7 @@ void Triangle::render(sf::RenderWindow& window)
 
 void Triangle::updateRender( )
 {
+	updateGlobalVertexVectors( );
 	for( int i = 0; i < 3; i++ )
 	{
 		renderShape.setPoint(i, sf::Vector2f(globalVertexVectors[i][0], globalVertexVectors[i][1]));
@@ -49,7 +50,15 @@ void Triangle::updateCenter( )
 	center /= 3;
 }
 
-void Triangle::updateVertexVectors( )
+void Triangle::updateGlobalVertexVectors( )
+{
+	for( int i = 0; i < 3; i++ )
+	{
+		globalVertexVectors[i] = localVertexVectors[i] + center;
+	}
+}
+
+void Triangle::updateLocalVertexVectors( )
 {
 	for( int i = 0; i < 3; i++ )
 	{

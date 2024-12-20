@@ -36,7 +36,9 @@ private:
 
     void updateCenter( );
 
-    void updateVertexVectors( );
+    void updateGlobalVertexVectors( );
+
+    void updateLocalVertexVectors( );
 
     void updateEdgeVectors( );
 
@@ -53,6 +55,5 @@ public:
     //collision check
 
     //updaters
-
 
 };

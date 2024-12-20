@@ -6,23 +6,21 @@ using namespace std;
 //array array
 
 template <typename T, size_t N>
-array<T, N> operator+=(array<T, N>& left, const array<T, N>& right)
+void operator+=(array<T, N>& left, const array<T, N>& right)
 {
     for( size_t i = 0; i < N; ++i )
     {
         left[i] += right[i];
     }
-    return left;
 }
 
 template <typename T, size_t N>
-array<T, N> operator-=(array<T, N>& left, const array<T, N>& right)
+void operator-=(array<T, N>& left, const array<T, N>& right)
 {
     for( size_t i = 0; i < N; ++i )
     {
         left[i] -= right[i];
     }
-    return left;
 }
 
 template <typename T, size_t N>
@@ -61,23 +59,21 @@ size_t operator*(array<T, N>& left, const array<T, N>& right)
 //array float
 
 template <typename T, size_t N>
-array<T, N> operator*=(array<T, N>& left, const size_t right)
+void operator*=(array<T, N>& left, const size_t right)
 {
     for( size_t i = 0; i < N; ++i )
     {
         left[i] *= right;
     }
-    return left;
 }
 
 template <typename T, size_t N>
-array<T, N> operator/=(array<T, N>& left, const size_t right)
+void operator/=(array<T, N>& left, const size_t right)
 {
     for( size_t i = 0; i < N; ++i )
     {
         left[i] /= right;
     }
-    return left;
 }
 
 template <typename T, size_t N>
