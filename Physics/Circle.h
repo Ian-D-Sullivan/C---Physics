@@ -37,9 +37,9 @@ public:
 
     Circle(fPoint, float, float);
 
-    //draw
+    //render
 
-    void draw(sf::RenderWindow&);
+    void render(sf::RenderWindow&);
 
     //collision check
 

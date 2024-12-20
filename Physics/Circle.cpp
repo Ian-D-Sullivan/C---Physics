@@ -8,6 +8,8 @@ using namespace std;
 
 typedef array<float, 2> fPoint;
 
+//constructor
+
 Circle::Circle(fPoint center, float radius, float mass)
 {
 	this->center = center;
@@ -15,14 +17,20 @@ Circle::Circle(fPoint center, float radius, float mass)
 	this->mass = mass;
 }
 
+//render
+
+void Circle::render(sf::RenderWindow& window)
+{
+	updateRender( );
+	window.draw(renderShape);
+}
+
+//updaters
+
 void Circle::updateRender( )
 {
 	renderShape.setRadius(radius);
 	renderShape.setPosition(center[0] - radius, center[1] - radius);
 }
 
-void Circle::draw(sf::RenderWindow& window)
-{
-	updateRender( );
-	window.draw(renderShape);
-}
+//collision check

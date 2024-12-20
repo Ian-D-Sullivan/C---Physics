@@ -1,5 +1,6 @@
 
 #include "Circle.h"
+#include "Triangle.h"
 #include <array>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -13,6 +14,8 @@ int main( )
 {
 
     Circle A({ {250,250} }, 50, 0 );
+
+    Triangle B({ { {50,50}, {100, 50}, {50, 100} } }, 0);
 
     sf::RenderWindow window(
         sf::VideoMode(500, 500),
@@ -28,7 +31,8 @@ int main( )
                 window.close( );
 
         window.clear( );
-        A.draw(window);
+        A.render(window);
+        B.render(window);
         window.display( );
     }
     return 0;

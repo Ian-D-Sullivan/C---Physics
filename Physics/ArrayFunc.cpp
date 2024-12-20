@@ -6,7 +6,7 @@ using namespace std;
 //array array
 
 template <typename T, size_t N>
-array<T, N>& operator+=(array<T, N>& left, const array<T, N>& right)
+array<T, N> operator+=(array<T, N>& left, const array<T, N>& right)
 {
     for( size_t i = 0; i < N; ++i )
     {
@@ -16,7 +16,7 @@ array<T, N>& operator+=(array<T, N>& left, const array<T, N>& right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator-=(array<T, N>& left, const array<T, N>& right)
+array<T, N> operator-=(array<T, N>& left, const array<T, N>& right)
 {
     for( size_t i = 0; i < N; ++i )
     {
@@ -26,7 +26,7 @@ array<T, N>& operator-=(array<T, N>& left, const array<T, N>& right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator+(array<T, N>& left, const array<T, N>& right)
+array<T, N> operator+(array<T, N>& left, const array<T, N>& right)
 {
     array<T, N> sum;
     for( size_t i = 0; i < N; ++i )
@@ -37,7 +37,7 @@ array<T, N>& operator+(array<T, N>& left, const array<T, N>& right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator-(array<T, N>& left, const array<T, N>& right)
+array<T, N> operator-(array<T, N>& left, const array<T, N>& right)
 {
     array<T, N> sum;
     for( size_t i = 0; i < N; ++i )
@@ -61,7 +61,7 @@ size_t operator*(array<T, N>& left, const array<T, N>& right)
 //array float
 
 template <typename T, size_t N>
-array<T, N>& operator*=(array<T, N>& left, const size_t right)
+array<T, N> operator*=(array<T, N>& left, const size_t right)
 {
     for( size_t i = 0; i < N; ++i )
     {
@@ -71,7 +71,7 @@ array<T, N>& operator*=(array<T, N>& left, const size_t right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator/=(array<T, N>& left, const size_t right)
+array<T, N> operator/=(array<T, N>& left, const size_t right)
 {
     for( size_t i = 0; i < N; ++i )
     {
@@ -81,7 +81,7 @@ array<T, N>& operator/=(array<T, N>& left, const size_t right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator*(array<T, N>& left, const size_t right)
+array<T, N> operator*(array<T, N>& left, const size_t right)
 {
     array<T, N> result;
     for( size_t i = 0; i < N; ++i )
@@ -92,7 +92,7 @@ array<T, N>& operator*(array<T, N>& left, const size_t right)
 }
 
 template <typename T, size_t N>
-array<T, N>& operator/(array<T, N>& left, const size_t right)
+array<T, N> operator/(array<T, N>& left, const size_t right)
 {
     array<T, N> result;
     for( size_t i = 0; i < N; ++i )
